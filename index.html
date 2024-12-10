@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Aggregated News Articles</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Aggregated News Articles</h1>
+        {% for article in articles %}
+        <div class="article">
+            <h2>{{ article.title }}</h2>
+            <p><strong>Source:</strong> {{ article.source }}</p>
+            <p><strong>Published Date:</strong> {{ article.published_date }}</p>
+            <p><strong>Frequency:</strong> {{ article.frequency }}</p>
+            <p><strong>Description:</strong> {{ article.description }}</p>
+            <a href="{{ article.link }}" target="_blank">Read more</a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
